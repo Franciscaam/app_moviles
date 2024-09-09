@@ -43,7 +43,6 @@ export class PasajeroPage implements OnInit {
   }
 
   async solicitarViaje() {
-    // Verifica si se seleccionaron ambas comunas y el pasajero está autenticado
     if (!this.comunaOrigen || !this.comunaDestino) {
       alert('Por favor selecciona ambas comunas.');
       return;
@@ -54,7 +53,6 @@ export class PasajeroPage implements OnInit {
       return;
     }
 
-    // Si todo está correcto, muestra el loading y realiza la solicitud de viaje
     const loading = await this.loadingController.create({
       message: 'Solicitando viaje...',
       spinner: 'circles',
