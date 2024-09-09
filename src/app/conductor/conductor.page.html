@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="volver()">Volver</ion-button>
+    </ion-buttons>
+    <ion-title>Conductor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-label>Comuna</ion-label>
+    <ion-select [(ngModel)]="comunaSeleccionada" placeholder="Seleccionar Comuna">
+      <ion-select-option *ngFor="let comuna of comunas" [value]="comuna">{{ comuna }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" (click)="cargarViajesPendientes()">Cargar viajes en esta comuna</ion-button>
+
+  <ion-list *ngIf="viajesPendientes.length > 0">
+    <ion-item *ngFor="let viaje of viajesPendientes">
+      <ion-label>Origen: {{ viaje.origen }} - Destino: {{ viaje.destino }}</ion-label>
+      <ion-button color="primary" (click)="aceptarViaje(viaje.id)">Aceptar</ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-item *ngIf="viajesPendientes.length === 0">
+    <ion-label>No hay viajes pendientes en esta comuna.</ion-label>
+  </ion-item>
+</ion-content>

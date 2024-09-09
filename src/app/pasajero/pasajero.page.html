@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="volver()">Volver</ion-button>
+    </ion-buttons>
+    <ion-title>Pasajero</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-item>
+    <ion-label>Comuna Origen</ion-label>
+    <ion-select [(ngModel)]="comunaOrigen" placeholder="Seleccionar Comuna de Origen">
+      <ion-select-option *ngFor="let comuna of comunas" [value]="comuna">{{ comuna }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Comuna Destino</ion-label>
+    <ion-select [(ngModel)]="comunaDestino" placeholder="Seleccionar Comuna de Destino">
+      <ion-select-option *ngFor="let comuna of comunas" [value]="comuna">{{ comuna }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-button expand="full" (click)="solicitarViaje()">Solicitar Viaje</ion-button>
+
+  <!-- Historial de viajes del pasajero -->
+  <ion-list *ngIf="historialViajes.length > 0" class="ion-margin-top">
+    <ion-item *ngFor="let viaje of historialViajes">
+      <ion-label>
+        <h3>Origen: {{ viaje.origen }} - Destino: {{ viaje.destino }}</h3>
+        <p>Fecha de solicitud: {{ viaje.fechaSolicitud.toDate() | date: 'medium' }}</p>
+        <p>Estado: {{ viaje.estado }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-item *ngIf="historialViajes.length === 0" class="ion-margin-top">
+    <ion-label>No tienes viajes solicitados.</ion-label>
+  </ion-item>
+</ion-content>

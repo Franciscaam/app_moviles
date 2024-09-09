@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label position="stacked">Correo Electrónico</ion-label>
+      <ion-input [(ngModel)]="email" type="email" placeholder="Ingresa tu correo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input [(ngModel)]="password" type="password" placeholder="Ingresa tu contraseña"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Confirmar Contraseña</ion-label>
+      <ion-input [(ngModel)]="confirmPassword" type="password" placeholder="Confirma tu contraseña"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" (click)="registrarse()" color="primary" class="ion-margin-top">Registrarse</ion-button>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="volver()">Volver</ion-button>
+    </ion-buttons>
+    <ion-title>Bienvenida</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Elige tu rol</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" (click)="irAConductor()">Conductor</ion-button>
+      <ion-button expand="block" (click)="irAPasajero()">Pasajero</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="ion-margin-top">
+    <ion-card-header>
+      <ion-card-title>Perfil del Usuario</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" (click)="irAPerfil()">Ver Perfil</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

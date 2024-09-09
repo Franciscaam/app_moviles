@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/bienvenida"></ion-back-button> <!-- Botón para volver -->
+    </ion-buttons>
+    <ion-title>Perfil del Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Información del Usuario</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Correo Electrónico</ion-label>
+        <ion-input value="{{ usuarioEmail }}" readonly></ion-input>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" color="primary" (click)="cambiarContrasena()">Cambiar Contraseña</ion-button>
+  <ion-button expand="full" color="danger" (click)="cerrarSesion()">Cerrar Sesión</ion-button>
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "DestinApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

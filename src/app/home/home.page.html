@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>DestinApp</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input [(ngModel)]="usuario" type="email" placeholder="Ingresa tu usuario"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="pass" type="password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button (click)="ingresar()" expand="block" color="success" class="ion-margin-top">Iniciar sesión</ion-button>
+
+  <ion-button (click)="registrarse()" expand="block" color="primary">No tienes cuenta, Regístrate</ion-button>
+
+  <ion-button (click)="olvidoContrasena()" expand="block" color="secondary">Olvidé mi contraseña</ion-button>
+</ion-content>
