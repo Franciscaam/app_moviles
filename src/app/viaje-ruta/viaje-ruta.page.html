@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="volver()">Volver</ion-button> 
+    </ion-buttons>
+    <ion-title>Viaje en Ruta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div id="map" style="height: 300px; margin-top: 20px;"></div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Deja a {{ pasajeroNombre }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Ganancias del viaje: ${{ gananciaConductor }}</p>
+      <ion-button expand="block" color="primary" (click)="finalizarViaje()">Finalizar Viaje</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

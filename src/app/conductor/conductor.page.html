@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="volver()">Volver</ion-button> 
+    </ion-buttons>
+    <ion-title>Viajes Pendientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-list *ngIf="viajesPendientes.length > 0" class="ion-margin-top">
+    <ion-item *ngFor="let viaje of viajesPendientes">
+      <ion-label>
+        <h3>Origen: {{ viaje.origen }}</h3>
+        <p>Destino: {{ viaje.destino }}</p>
+        <p>Pasajero: {{ viaje.pasajeroNombre }}</p>
+        <p>Ganancia: ${{ viaje.precio }}</p>
+      </ion-label>
+      <ion-button (click)="aceptarViaje(viaje.id)" color="primary" slot="end">Aceptar</ion-button>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-item *ngIf="viajesPendientes.length === 0" class="ion-margin-top">
+    <ion-label>No hay viajes disponibles para aceptar.</ion-label>
+  </ion-item>
+</ion-content>
