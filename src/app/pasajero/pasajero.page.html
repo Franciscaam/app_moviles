@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="volver()">Volver</ion-button> 
+    </ion-buttons>
+    <ion-title>Pasajero</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <div id="map" style="height: 400px; margin-top: 20px;"></div>
+
+  <ion-button expand="full" (click)="solicitarViaje()" class="ion-margin-top">
+    Solicitar Viaje
+  </ion-button>
+
+
+  <ion-list *ngIf="historialViajes.length > 0" class="ion-margin-top">
+    <ion-item *ngFor="let viaje of historialViajes">
+      <ion-label>
+        <h3>Origen: {{ viaje.origen }} - Destino: {{ viaje.destino }}</h3>
+        <p>Fecha de solicitud: {{ viaje.fechaSolicitud.toDate() | date: 'medium' }}</p>
+        <p>Estado: {{ viaje.estado }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-item *ngIf="historialViajes.length === 0" class="ion-margin-top">
+    <ion-label>No tienes viajes solicitados.</ion-label>
+  </ion-item>
+</ion-content>

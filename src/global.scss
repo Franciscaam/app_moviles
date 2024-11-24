@@ -1,0 +1,90 @@
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+@import "~leaflet/dist/leaflet.css";
+
+:root {
+  --ion-color-primary: #5d7599; /* Azul pastel */
+  --ion-color-secondary: #abb6c8; /* Gris azulado */
+  --ion-color-tertiary: #dadada; /* Gris claro */
+  --ion-color-light: #f7f0c6; /* Beige claro */
+  --ion-color-medium: #c2c4b6; /* Gris suave */
+  --ion-font-family: 'Roboto', sans-serif;
+}
+
+/* Ajustar la visibilidad general del contenido */
+ion-content {
+  background-color: var(--ion-color-light); /* Fondo claro */
+  color: var(--ion-color-primary); /* Texto en azul pastel */
+}
+
+/* Personalizar el encabezado */
+ion-header, ion-toolbar {
+  background-color: var(--ion-color-primary); /* Fondo de encabezado */
+  color: white; /* Texto blanco para contraste */
+}
+
+ion-title {
+  color: white; /* Asegurar que los títulos sean visibles sobre fondo oscuro */
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Ajustar inputs y botones */
+ion-input, ion-select {
+  background-color: var(--ion-color-light);
+  color: var(--ion-color-primary);
+  border: 1px solid var(--ion-color-medium);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+ion-button {
+  background-color: var(--ion-color-primary);
+  color: white;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+ion-button:hover {
+  background-color: var(--ion-color-secondary);
+}
+
+/* Ajuste de las tarjetas */
+ion-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+/* Ajustar el espaciado y visibilidad de las listas */
+ion-item {
+  --background: var(--ion-color-light);
+  color: var(--ion-color-primary);
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+/* Eliminar el color amarillo del autofill en los inputs */
+ion-input input:-webkit-autofill,
+ion-input input:-webkit-autofill:hover,
+ion-input input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px var(--ion-color-light) inset; /* Fondo claro */
+  box-shadow: 0 0 0px 1000px var(--ion-color-light) inset;
+  -webkit-text-fill-color: var(--ion-color-primary); /* Texto de autofill en el color principal */
+}
+
